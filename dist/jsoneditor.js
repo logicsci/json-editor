@@ -4963,9 +4963,8 @@ JSONEditor.defaults.editors.select = JSONEditor.AbstractEditor.extend({
         if(this.enumSource[i].filter) {
           this.enumSource[i].filter = this.jsoneditor.compileTemplate(this.enumSource[i].filter, this.template_engine);
         }
-      }
-      // if the source yet is an object, then try to pull the $ref
-      if(this.enumSource[i].source && typeof this.enumSource[i].source == "object") {
+        // if the source yet is an object, then try to pull the $ref
+        if(this.enumSource[i].source && typeof this.enumSource[i].source == "object") {
            var src = this.jsoneditor.expandRefs(this.enumSource[i].source);
            this.enumSource[i].source = [];
            var j;
@@ -4974,6 +4973,7 @@ JSONEditor.defaults.editors.select = JSONEditor.AbstractEditor.extend({
            {
                this.enumSource[i].source.push(src[j]);
            }
+        }
       }
     }
     // Other, not supported
